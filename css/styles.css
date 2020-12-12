@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Yeon Sung', cursive;
+}
+
+body {
+    text-align: center;
+}
+
+h1 {
+    padding: 20px 0;
+}
+
+#showcase {
+    background-image: url('../img/showcase.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: auto;
+    height: 500px;
+}
