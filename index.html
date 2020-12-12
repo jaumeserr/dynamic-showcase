@@ -9,10 +9,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Dynamic Drag & Drop ShowCase</h1>
     
-    <div id="showcase"></div>
-
+    <div class="container">
+        <h1>Dynamic Drag & Drop ShowCase</h1>
+        
+        <p>Has comprado: <span id="listWine"></span></p>
+        <div id="showcase">
+            <div id="wineContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
+                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="manzana">
+                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
+                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
+                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
+                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
+                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
+            </div>
+        </div>
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <p id="result"></p>
+    </div>    
+    
     <script src="js/main.js"></script>
 </body>
 </html>
