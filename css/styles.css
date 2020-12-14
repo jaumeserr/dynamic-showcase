@@ -27,15 +27,16 @@ body {
     padding: 10px 0;
     font-size: 20px;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 #showcase {
-    background-image: url('../img/showcase.png');
+    background-image: url(../img/showcase.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 700px;
-    height: 600px;
+    width: 698px;
+    height: 428px;
     margin: 0 auto;
     position: relative;
 }
@@ -47,7 +48,6 @@ body {
 #wineContainer {
     width: 220px;
     height: 93px;
-    background-color: rgba(255, 255, 255, 0.5);
     position: absolute;
     top: 104px;
     right: 50px;
@@ -56,7 +56,6 @@ body {
 #appleJuiceContainer {
     width: 180px;
     height: 93px;
-    background-color: rgba(255, 255, 255, 0.5);
     position: absolute;
     top: 104px;
     right: 271px;
@@ -65,7 +64,6 @@ body {
 #cherryJamContainer {
     width: 196px;
     height: 57px;
-    background-color: rgba(255, 255, 255, 0.5);
     position: absolute;
     top: 140px;
     left: 51px;
@@ -73,33 +71,158 @@ body {
 
 #saltContainer {
     width: 108px;
-    height: 58px;
-    background-color: rgba(255, 255, 255, 0.5);
+    height: 48px;
     position: absolute;
-    top: 228px;
+    top: 239px;
     right: 50px;
 }
 
-.big {
+#breadContainer {
+    width: 167px;
+    height: 38px;
+    position: absolute;
+    top: 248px;
+    right: 159px;
+}
+
+#butterContainer {
+    width: 180px;
+    height: 69px;
+    position: absolute;
+    top: 217px;
+    right: 327px;
+}
+
+#ketchupContainer {
+    width: 141px;
+    height: 69px;
+    position: absolute;
+    top: 217px;
+    right: 508px;
+}
+
+#pearJuiceContainer {
+    width: 210px;
+    height: 58px;
+    position: absolute;
+    top: 317px;
+    right: 439px;
+}
+
+#garlicContainer {
+    width: 108px;
+    height: 37px;
+    position: absolute;
+    top: 338px;
+    right: 330px;
+}
+
+#milkContainer {
+    width: 160px;
+    height: 78px;
+    position: absolute;
+    top: 298px;
+    right: 51px;
+}
+
+#oilContainer {
+    width: 116px;
+    height: 67px;
+    position: absolute;
+    top: 308px;
+    left: 372px;
+}
+
+.wine {
     width: auto;
     height: 85px;
     margin-top: 7px;
 }
 
-.little {
+.appleJuice {
+    width: auto;
+    height: 85px;
+    margin-top: 7px;
+}
+
+.cherryJam {
     width: auto;
     height: 50px;
     margin-top: 7px;
     top: 0;
 }
 
+.salt {
+    width: auto;
+    height: 40px;
+    margin-top: 7px;
+    top: 0;
+}
 
+.bread {
+    width: auto;
+    height: 30px;
+    margin-top: 7px;
+    top: 0;
+}
+
+.butter {
+    width: auto;
+    height: 60px;
+    margin-top: 7px;
+    top: 0;
+}
+
+.ketchup {
+    width: auto;
+    height: 60px;
+    margin-top: 7px;
+    top: 0;
+}
+
+.pearJuice {
+    width: auto;
+    height: 50px;
+    margin-top: 7px;
+    top: 0;
+}
+
+.garlic {
+    width: auto;
+    height: 30px;
+    margin-top: 7px;
+    top: 0;
+}
+
+.milk {
+    width: auto;
+    height: 70px;
+    margin-top: 7px;
+    top: 0;
+}
+
+.oil {
+    width: auto;
+    height: 60px;
+    margin-top: 7px;
+    top: 0;
+}
+
+.carrot {
+    width: auto;
+    height: 70px;
+    margin-top: 7px;
+    top: 0;
+}
 
 #div2 {
-    float: left;
-    width: 100px;
+    width: 200px;
     height: 100px;
     margin: 10px;
     padding: 10px;
-    border: 1px solid black;
+    background-image: url('../img/basket.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
 }
