@@ -5,46 +5,65 @@ const foodList = {
     },
     appleJuice: {
         name: 'Apple Juice',
-        price: 3,
+        price: 5,
+    },
+    cherryJam: {
+        name: 'Cherry Jam',
+        price: 2,
+    },
+    salt: {
+        name: 'Salt',
+        price: 1,
     },
 }
 
 let counter = 0;
-let counterWine = 0;
 
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
-// const showNumProductWhenAddToBasket = () => {
-    
-// }
+const showNameProductWhenAddToBasket = product => {
+    document.getElementById('nameProduct').innerHTML = product;
+}
+
+const addPriceWhenAddToBasket = price => {
+    counter += price;
+    document.getElementById('amountBasket').innerHTML = counter;
+}
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-    console.log('Ha entrado un ' + ev.target.id);
+
+    const {
+        wine: {name: wineName, price: winePrice},
+        appleJuice: {name: appleJuiceName, price: appleJuicePrice},
+        cherryJam: {name: cherryJamName, price: cherryJamPrice},
+        salt: {name: saltName, price: saltPrice},
+    } = foodList
 
     switch(ev.target.id) {
-        case 'vino':
-            counter += foodList.wine.price;
-            counterWine++;
-            console.log(counter);
-            console.log(`Entran ${foodList.wine.price} euros`);
-            document.getElementById('result').innerHTML = counter
-            document.getElementById('listWine').innerHTML = counterWine;
+        case 'wine':  
+            showNameProductWhenAddToBasket(wineName);
+            addPriceWhenAddToBasket(winePrice);
         break;
-        case 'manzana':
-            counter += appleJuice;
-            console.log(counter);
-            console.log(`Entran ${appleJuice} euros`);
+        case 'applejuice':
+            showNameProductWhenAddToBasket(appleJuiceName);
+            addPriceWhenAddToBasket(appleJuicePrice);
+        break;
+        case 'cherryJam':
+            showNameProductWhenAddToBasket(cherryJamName);
+            addPriceWhenAddToBasket(cherryJamPrice);
+        break;
+        case 'salt':
+            showNameProductWhenAddToBasket(saltName);
+            addPriceWhenAddToBasket(saltPrice);
         break;
     }
 }
 
-  
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
-    
 }

@@ -7,16 +7,26 @@
 
 body {
     text-align: center;
+    background: #e8e8e8;
 }
 
 .container {
-    background: blue;
-    width: 1000px;
+    width: 1200px;
     margin: 0 auto;
 }
 
-h1 {
+.container > h1 {
     padding: 20px 0;
+}
+
+.container > p {
+    border: 2px solid black;
+    background: white;
+    border-radius: 5px;
+    width: 30%;
+    padding: 10px 0;
+    font-size: 20px;
+    margin: 0 auto;
 }
 
 #showcase {
@@ -30,6 +40,10 @@ h1 {
     position: relative;
 }
 
+.content {
+    display: flex;
+}
+
 #wineContainer {
     width: 220px;
     height: 93px;
@@ -39,11 +53,47 @@ h1 {
     right: 50px;
 }
 
-.wineBottle {
+#appleJuiceContainer {
+    width: 180px;
+    height: 93px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 104px;
+    right: 271px;
+}
+
+#cherryJamContainer {
+    width: 196px;
+    height: 57px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 140px;
+    left: 51px;
+}
+
+#saltContainer {
+    width: 108px;
+    height: 58px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 228px;
+    right: 50px;
+}
+
+.big {
     width: auto;
     height: 85px;
     margin-top: 7px;
 }
+
+.little {
+    width: auto;
+    height: 50px;
+    margin-top: 7px;
+    top: 0;
+}
+
+
 
 #div2 {
     float: left;

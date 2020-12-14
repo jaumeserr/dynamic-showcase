@@ -12,21 +12,42 @@
     
     <div class="container">
         <h1>Dynamic Drag & Drop ShowCase</h1>
-        
-        <p>Has comprado: <span id="listWine"></span></p>
-        <div id="showcase">
-            <div id="wineContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
-                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="manzana">
-                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
-                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
-                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
-                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
-                <img class="wineBottle" src="img/winebottle.png" alt="wineBottle" draggable="true" ondragstart="drag(event)" id="vino">
+        <p>You are buying <span id="nameProduct"></span></p>
+        <div class="content">
+            <div id="showcase">
+                <div id="wineContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img class="big" src="img/winebottle.png" alt="wine" draggable="true" ondragstart="drag(event)" id="wine">
+                    <img class="big" src="img/winebottle.png" alt="wine" draggable="true" ondragstart="drag(event)" id="wine">
+                    <img class="big" src="img/winebottle.png" alt="wine" draggable="true" ondragstart="drag(event)" id="wine">
+                    <img class="big" src="img/winebottle.png" alt="wine" draggable="true" ondragstart="drag(event)" id="wine">
+                    <img class="big" src="img/winebottle.png" alt="wine" draggable="true" ondragstart="drag(event)" id="wine">
+                    <img class="big" src="img/winebottle.png" alt="wine" draggable="true" ondragstart="drag(event)" id="wine">
+                    <img class="big" src="img/winebottle.png" alt="wine" draggable="true" ondragstart="drag(event)" id="wine">
+                </div>
+                <div id="appleJuiceContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img class="big" src="img/appleJuice.png" alt="appleJuice" draggable="true" ondragstart="drag(event)" id="applejuice">
+                    <img class="big" src="img/appleJuice.png" alt="appleJuice" draggable="true" ondragstart="drag(event)" id="applejuice">
+                    <img class="big" src="img/appleJuice.png" alt="appleJuice" draggable="true" ondragstart="drag(event)" id="applejuice">
+                    <img class="big" src="img/appleJuice.png" alt="appleJuice" draggable="true" ondragstart="drag(event)" id="applejuice">
+                    <img class="big" src="img/appleJuice.png" alt="appleJuice" draggable="true" ondragstart="drag(event)" id="applejuice">
+                </div>
+                <div id="cherryJamContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img class="little" src="img/cherryJam.png" alt="cherryJam" draggable="true" ondragstart="drag(event)" id="cherryJam">
+                    <img class="little" src="img/cherryJam.png" alt="cherryJam" draggable="true" ondragstart="drag(event)" id="cherryJam">
+                    <img class="little" src="img/cherryJam.png" alt="cherryJam" draggable="true" ondragstart="drag(event)" id="cherryJam">
+                    <img class="little" src="img/cherryJam.png" alt="cherryJam" draggable="true" ondragstart="drag(event)" id="cherryJam">
+                    <img class="little" src="img/cherryJam.png" alt="cherryJam" draggable="true" ondragstart="drag(event)" id="cherryJam">
+                </div>
+                <div id="saltContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img class="little" src="img/salt.png" alt="salt" draggable="true" ondragstart="drag(event)" id="salt">
+                    <img class="little" src="img/salt.png" alt="salt" draggable="true" ondragstart="drag(event)" id="salt">
+                </div>
+            </div>
+            <div>
+                <p>Your basket costs: <span id="amountBasket"></span></p>
+                <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             </div>
         </div>
-        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <p id="result"></p>
     </div>    
     
     <script src="js/main.js"></script>
