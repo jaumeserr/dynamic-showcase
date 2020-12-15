@@ -55,11 +55,15 @@ const showNameProductWhenAddToBasket = product => {
 
 const addPriceWhenAddToBasket = price => {
     counter += price;
-    document.getElementById('amountBasket').innerHTML = counter;
+    document.getElementById('amountBasket').innerHTML = counter.toFixed(2);
 }
 
-const hideProductWhenEnterOnTheBasket = product => {
-
+const convertIdToName = name => {
+    const str = name.replace(/_/g, " ").split(" ");
+    for(let i = 0; i < str.length; i++) {
+        str[i] = str[i].substring(0,1).toUpperCase()+str[i].substring(1);
+    }
+    return str.join(' ');
 }
 
 const {
@@ -78,8 +82,8 @@ const {
 
 const drag = ev => {
     ev.dataTransfer.setData("text", ev.target.id);
-    showNameProductWhenAddToBasket(ev.target.id);
-    }
+    document.getElementById('nameProduct').innerHTML = convertIdToName(ev.target.id);
+}
 
 const drop = ev => {
     ev.preventDefault();
@@ -87,50 +91,37 @@ const drop = ev => {
     ev.target.appendChild(document.getElementById(data));
     switch(data) {
         case 'wine':  
-            showNameProductWhenAddToBasket(wineName);
             addPriceWhenAddToBasket(winePrice);    
         break;
-        case 'applejuice':
-            showNameProductWhenAddToBasket(appleJuiceName);
+        case 'apple_juice':
             addPriceWhenAddToBasket(appleJuicePrice);
         break;
-        case 'cherryJam':
-            showNameProductWhenAddToBasket(cherryJamName);
+        case 'cherry_jam':
             addPriceWhenAddToBasket(cherryJamPrice);
         break;
         case 'salt':
-            showNameProductWhenAddToBasket(saltName);
             addPriceWhenAddToBasket(saltPrice);
         break;
         case 'bread':
-            showNameProductWhenAddToBasket(breadName);
             addPriceWhenAddToBasket(breadPrice);
         break;
         case 'butter':
-            showNameProductWhenAddToBasket(butterName);
             addPriceWhenAddToBasket(butterPrice);
         break;
         case 'ketchup':
-            showNameProductWhenAddToBasket(ketchupName);
             addPriceWhenAddToBasket(ketchupPrice);
         break;
-        case 'pear':
-            showNameProductWhenAddToBasket(pearJuiceName);
+        case 'pear_juice':
             addPriceWhenAddToBasket(pearJuicePrice);
         break;
         case 'garlic':
-            showNameProductWhenAddToBasket(garlicName);
             addPriceWhenAddToBasket(garlicPrice);
         break;
         case 'milk':
-            showNameProductWhenAddToBasket(milkName);
             addPriceWhenAddToBasket(milkPrice);
         break;
         case 'oil':
-            showNameProductWhenAddToBasket(oilName);
             addPriceWhenAddToBasket(oilPrice);
         break;
     }
-    hideProductWhenEnterOnTheBasket('wine');
-
 }

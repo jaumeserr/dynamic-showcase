@@ -208,13 +208,6 @@ body {
     top: 0;
 }
 
-.carrot {
-    width: auto;
-    height: 70px;
-    margin-top: 7px;
-    top: 0;
-}
-
 #div2 {
     width: 200px;
     height: 100px;
@@ -224,5 +217,5 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: 1;
+    overflow: hidden;
 }
