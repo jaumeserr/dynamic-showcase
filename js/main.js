@@ -20,30 +20,29 @@ const showNameProductWhenAddToBasket = product => {
     document.getElementById('nameProduct').innerHTML = product;
 }
 
-const convertIdToName = name => {
-    const str = name.replace(/_/g, " ").split(" ");
-    for(let i = 0; i < str.length; i++) {
+/** Convert Id to a Valid String
+ * 
+ * @param {string} value The input value
+ * @param {string} position The first position of the for loop
+ * @param {string} partToJoin The separation that you need to make the join method
+ * 
+ */
+const convertIdToValidString = (value, position, separator) => {
+    const str = value.replace(/_/g, " ").split(" ");
+    for(let i = position; i < str.length; i++) {
         str[i] = str[i].substring(0,1).toUpperCase()+str[i].substring(1);
     }
-    return str.join(' ');
-}
-
-const convertIdToObjParam = name => {
-    const str = name.replace(/_/g, " ").split(" ");
-    for(let i = 1; i < str.length; i++) {
-        str[i] = str[i].substring(0,1).toUpperCase()+str[i].substring(1);
-    }
-    return str.join('');
+    return str.join(separator);
 }
 
 const addPriceWhenAddToBasket = product => {
-    counter += priceList[convertIdToObjParam(product)];
+    counter += priceList[convertIdToValidString(product,1,'')];
     document.getElementById('amountBasket').innerHTML = counter.toFixed(2);
 }
 
 const drag = ev => {
     ev.dataTransfer.setData("text", ev.target.id);
-    document.getElementById('nameProduct').innerHTML = convertIdToName(ev.target.id);
+    document.getElementById('nameProduct').innerHTML = convertIdToValidString(ev.target.id,0,' ');
 }
 
 const drop = ev => {
