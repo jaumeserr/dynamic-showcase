@@ -14,12 +14,6 @@ const priceList = {
 
 let counter = 0;
 
-const allowDrop = ev => ev.preventDefault();
-
-const showNameProductWhenAddToBasket = product => {
-    document.getElementById('nameProduct').innerHTML = product;
-}
-
 /** Convert Id to a Valid String
  * 
  * @param {string} value The input value
@@ -40,14 +34,36 @@ const addPriceWhenAddToBasket = product => {
     document.getElementById('amountBasket').innerHTML = counter.toFixed(2);
 }
 
-const drag = ev => {
-    ev.dataTransfer.setData("text", ev.target.id);
-    document.getElementById('nameProduct').innerHTML = convertIdToValidString(ev.target.id,0,' ');
+let items = document.querySelectorAll('[data-draggable="item"]')
+for(let i = 0; i < items.length; i ++) {
+    items[i].setAttribute('draggable', 'true');
 }
 
-const drop = ev => {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-    addPriceWhenAddToBasket(data);
-}
+var item = null;
+
+document.addEventListener('dragstart', (e) => {
+    item = e.target;
+    let nameAttr = item.getAttribute('alt');
+    document.getElementById('nameProduct').innerHTML = convertIdToValidString(nameAttr,0,' ');
+    e.dataTransfer.setData('text', '');
+}, false);
+
+document.addEventListener('dragover', (e) => {
+    if(item) { 
+        e.preventDefault();
+    }
+}, false);	
+
+document.addEventListener('drop', (e) => {
+    if(e.target.getAttribute('data-draggable') == 'target') {
+        e.target.appendChild(item);
+        e.preventDefault();
+    }
+    let nameAttr = item.getAttribute('alt');
+    addPriceWhenAddToBasket(convertIdToValidString(nameAttr,1,''))
+    document.querySelector('[data-draggable="item"]').style.visibility = "hidden";
+}, false);
+
+document.addEventListener('dragend', (e) => {
+    item = null;
+}, false);
