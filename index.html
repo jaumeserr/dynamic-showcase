@@ -5,8 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Showcase</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+    <div class="container">
+        <h1>Dynamic Drag & Drop ShowCase</h1>
+        <p>You are buying <span id="nameProduct"></span></p>
+        <div class="content">
+            <div id="showcase">
+                <div id="wineContainer">
+                    <img id="wine01" class="wine" src="img/winebottle.png" alt="Wine" draggable="true" ondragstart="drag(event)">
+                    <img id="wine02" class="wine" src="img/winebottle.png" alt="Wine" draggable="true" ondragstart="drag(event)">
+                    <img id="wine03" class="wine" src="img/winebottle.png" alt="Wine" draggable="true" ondragstart="drag(event)">
+                    <img id="wine04" class="wine" src="img/winebottle.png" alt="Wine" draggable="true" ondragstart="drag(event)">
+                    <img id="wine05" class="wine" src="img/winebottle.png" alt="Wine" draggable="true" ondragstart="drag(event)">
+                    <img id="wine06" class="wine" src="img/winebottle.png" alt="Wine" draggable="true" ondragstart="drag(event)">
+                    <img id="wine07" class="wine" src="img/winebottle.png" alt="Wine" draggable="true" ondragstart="drag(event)">
+                </div>
+                <div id="appleJuiceContainer">
+                    <img id="applejuice01" class="appleJuice" src="img/appleJuice.png" alt="Apple Juice" draggable="true" ondragstart="drag(event)">
+                    <img id="applejuice02" class="appleJuice" src="img/appleJuice.png" alt="Apple Juice" draggable="true" ondragstart="drag(event)">
+                    <img id="applejuice03" class="appleJuice" src="img/appleJuice.png" alt="Apple Juice" draggable="true" ondragstart="drag(event)">
+                    <img id="applejuice04" class="appleJuice" src="img/appleJuice.png" alt="Apple Juice" draggable="true" ondragstart="drag(event)">
+                    <img id="applejuice05" class="appleJuice" src="img/appleJuice.png" alt="Apple Juice" draggable="true" ondragstart="drag(event)">
+                </div>
+                <div id="cherryJamContainer">
+                    <img id="cherryjam01" class="cherryJam" src="img/cherryJam.png" alt="Cherry Jam" draggable="true" ondragstart="drag(event)">
+                    <img id="cherryjam02" class="cherryJam" src="img/cherryJam.png" alt="Cherry Jam" draggable="true" ondragstart="drag(event)">
+                    <img id="cherryjam03" class="cherryJam" src="img/cherryJam.png" alt="Cherry Jam" draggable="true" ondragstart="drag(event)">
+                    <img id="cherryjam04" class="cherryJam" src="img/cherryJam.png" alt="Cherry Jam" draggable="true" ondragstart="drag(event)">
+                    <img id="cherryjam05" class="cherryJam" src="img/cherryJam.png" alt="Cherry Jam" draggable="true" ondragstart="drag(event)">
+                </div>
+                <div id="saltContainer">
+                    <img id="salt01" class="salt" src="img/salt.png" alt="Salt" draggable="true" ondragstart="drag(event)">
+                    <img id="salt02" class="salt" src="img/salt.png" alt="Salt" draggable="true" ondragstart="drag(event)">
+                    <img id="salt03" class="salt" src="img/salt.png" alt="Salt" draggable="true" ondragstart="drag(event)">
+                </div>
+                <div id="breadContainer">
+                    <img id="bread01" class="bread" src="img/bread.png" alt="Bread" draggable="true" ondragstart="drag(event)">
+                    <img id="bread02" class="bread" src="img/bread.png" alt="Bread" draggable="true" ondragstart="drag(event)">
+                </div>
+                <div id="butterContainer">
+                    <img id="butter01" class="butter" src="img/butter.png" alt="Butter" draggable="true" ondragstart="drag(event)">
+                    <img id="butter02" class="butter" src="img/butter.png" alt="Butter" draggable="true" ondragstart="drag(event)">
+                    <img id="butter03" class="butter" src="img/butter.png" alt="Butter" draggable="true" ondragstart="drag(event)">
+                </div>
+                <div id="ketchupContainer">
+                    <img id="ketchup01" class="ketchup" src="img/ketchup.png" alt="Ketchup" draggable="true" ondragstart="drag(event)">
+                    <img id="ketchup02" class="ketchup" src="img/ketchup.png" alt="Ketchup" draggable="true" ondragstart="drag(event)">
+                    <img id="ketchup03" class="ketchup" src="img/ketchup.png" alt="Ketchup" draggable="true" ondragstart="drag(event)">
+                    <img id="ketchup04" class="ketchup" src="img/ketchup.png" alt="Ketchup" draggable="true" ondragstart="drag(event)">
+                </div>
+                <div id="pearJuiceContainer">
+                    <img id="pearjuice01" class="pearJuice" src="img/pearJuice.png" alt="Pear Juice" draggable="true" ondragstart="drag(event)">
+                    <img id="pearjuice02" class="pearJuice" src="img/pearJuice.png" alt="Pear Juice" draggable="true" ondragstart="drag(event)">
+                    <img id="pearjuice03" class="pearJuice" src="img/pearJuice.png" alt="Pear Juice" draggable="true" ondragstart="drag(event)">
+                    <img id="pearjuice04" class="pearJuice" src="img/pearJuice.png" alt="Pear Juice" draggable="true" ondragstart="drag(event)">
+                    <img id="pearjuice05" class="pearJuice" src="img/pearJuice.png" alt="Pear Juice" draggable="true" ondragstart="drag(event)">
+                    <img id="pearjuice06" class="pearJuice" src="img/pearJuice.png" alt="Pear Juice" draggable="true" ondragstart="drag(event)">
+                </div>
+                <div id="garlicContainer">s
+                    <img id="garlic01" class="garlic" src="img/garlic.png" alt="Garlic" draggable="true" ondragstart="drag(event)">
+                    <img id="garlic02" class="garlic" src="img/garlic.png" alt="Garlic" draggable="true" ondragstart="drag(event)">
+                    <img id="garlic03" class="garlic" src="img/garlic.png" alt="Garlic" draggable="true" ondragstart="drag(event)">
+                </div>
+                <div id="milkContainer">
+                    <img id="milk01" class="milk" src="img/milk.png" alt="Milk" draggable="true" ondragstart="drag(event)">
+                    <img id="milk02" class="milk" src="img/milk.png" alt="Milk" draggable="true" ondragstart="drag(event)">
+                    <img id="milk03" class="milk" src="img/milk.png" alt="Milk" draggable="true" ondragstart="drag(event)">
+                    <img id="milk04" class="milk" src="img/milk.png" alt="Milk" draggable="true" ondragstart="drag(event)">
+                    <img id="milk05" class="milk" src="img/milk.png" alt="Milk" draggable="true" ondragstart="drag(event)">
+                </div>
+                <div id="oilContainer">
+                    <img id="oil01" class="oil" src="img/oil.png" alt="Oil" draggable="true" ondragstart="drag(event)">
+                    <img id="oil02" class="oil" src="img/oil.png" alt="Oil" draggable="true" ondragstart="drag(event)">
+                    <img id="oil03" class="oil" src="img/oil.png" alt="Oil" draggable="true" ondragstart="drag(event)">
+                    <img id="oil04" class="oil" src="img/oil.png" alt="Oil" draggable="true" ondragstart="drag(event)">
+                </div>
+            </div>
+            <div>
+                <p>Your basket costs: <span id="amountBasket"></span> €</p>
+                <div class="basket" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+        </div>
+    </div>    
+    
     <script src="js/main.js"></script>
 </body>
 </html>
