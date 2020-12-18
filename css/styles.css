@@ -208,7 +208,7 @@ body {
     top: 0;
 }
 
-#div2 {
+.basket {
     width: 200px;
     height: 100px;
     margin: 10px;

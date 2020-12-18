@@ -38,36 +38,32 @@ const addPriceWhenAddToBasket = product => {
     document.getElementById('amountBasket').innerHTML = counter.toFixed(2);
 }
 
-let items = document.querySelectorAll('[data-draggable="item"]')
-for(let i = 0; i < items.length; i ++) {
-    items[i].setAttribute('draggable', 'true');
+const drag = ev => {
+    ev.dataTransfer.setData("text", ev.target.id);
 }
 
-var item = null;
+const drop = ev => {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    console.log(data);
+    ev.target.appendChild(document.getElementById(data));
+}
 
-document.addEventListener('dragstart', (e) => {
-    item = e.target;
-    let nameAttr = item.getAttribute('alt');
-    document.getElementById('nameProduct').innerHTML = convertAltToValidString(nameAttr,0,' ');
-    e.dataTransfer.setData('text', '');
-}, false);
+const allowDrop = ev => {
+    console.log('allowdrop', ev);
+    ev.preventDefault();
+}
 
-document.addEventListener('dragover', (e) => {
-    if(item) { 
-        e.preventDefault();
-    }
-}, false);	
 
-document.addEventListener('drop', (e) => {
-    if(e.target.getAttribute('data-draggable') == 'target') {
-        e.target.appendChild(item);
-        e.preventDefault();
-    }
-    let nameAttr = item.getAttribute('alt');
-    addPriceWhenAddToBasket(convertAltToValidString(nameAttr,1,''))
-    document.querySelector('[data-draggable="item"]').style.visibility = "hidden";
-}, false);
 
-document.addEventListener('dragend', (e) => {
-    item = null;
-}, false);
+
+
+
+
+
+
+
+
+
+
+
