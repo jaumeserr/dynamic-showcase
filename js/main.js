@@ -14,14 +14,14 @@ const priceList = {
 
 let counter = 0;
 
-/** Convert Id to a Valid String
- * 
- * @param {string} value The input value
- * @param {string} position The first position of the for loop
- * @param {string} partToJoin The separation that you need to make the join method
- * 
+/**
+ * Convert alt name to a valid string
+ * @param {string}      value        The input value
+ * @param {number}      position     The first position of the for loop
+ * @param {string}      separator    The separation that you need to make
+ * @returns {string}                 Return capitalized word with space or camelcased without space
  */
-const convertIdToValidString = (value, position, separator) => {
+const convertAltToValidString = (value, position, separator) => {
     const str = value.replace(/_/g, " ").split(" ");
     for(let i = position; i < str.length; i++) {
         str[i] = str[i].substring(0,1).toUpperCase()+str[i].substring(1);
@@ -29,8 +29,12 @@ const convertIdToValidString = (value, position, separator) => {
     return str.join(separator);
 }
 
+/**
+ * Increment the product price when you put a product on the basket, round with 2 decimals and shows on the screen
+ * @param {string}      product     The input value
+ */
 const addPriceWhenAddToBasket = product => {
-    counter += priceList[convertIdToValidString(product,1,'')];
+    counter += priceList[convertAltToValidString(product,1,'')];
     document.getElementById('amountBasket').innerHTML = counter.toFixed(2);
 }
 
@@ -44,7 +48,7 @@ var item = null;
 document.addEventListener('dragstart', (e) => {
     item = e.target;
     let nameAttr = item.getAttribute('alt');
-    document.getElementById('nameProduct').innerHTML = convertIdToValidString(nameAttr,0,' ');
+    document.getElementById('nameProduct').innerHTML = convertAltToValidString(nameAttr,0,' ');
     e.dataTransfer.setData('text', '');
 }, false);
 
@@ -60,7 +64,7 @@ document.addEventListener('drop', (e) => {
         e.preventDefault();
     }
     let nameAttr = item.getAttribute('alt');
-    addPriceWhenAddToBasket(convertIdToValidString(nameAttr,1,''))
+    addPriceWhenAddToBasket(convertAltToValidString(nameAttr,1,''))
     document.querySelector('[data-draggable="item"]').style.visibility = "hidden";
 }, false);
 
